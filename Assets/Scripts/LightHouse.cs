@@ -15,8 +15,5 @@ public class LightHouse : MonoBehaviour
     {
         
     } 
-    void GameStart()
-    {
 
-    }
 }

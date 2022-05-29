@@ -761,11 +761,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: 4b10db9c-df31-4ff3-963b-ef524b9e5db3
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: OceanSweeper
+  organizationId: yearlingcube
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
