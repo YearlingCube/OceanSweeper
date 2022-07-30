@@ -100,8 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6340668146837296315}
+  SpawnArea: {fileID: 0}
   Speed: 1
   ServeAngle: 45
+  offSet: 0.5
   FlagSprite: {fileID: 21300000, guid: 38e672a74c4c63c46b9049009a625fff, type: 3}
   BombSprite: {fileID: 21300000, guid: 87b4d8bb020ad2e4c8292e36c628a4c6, type: 3}
   EmptyCrateSprite: {fileID: 21300000, guid: 69e9b4f1fc8d9bb49bd2b55961a9ef41, type: 3}
@@ -124,7 +126,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
