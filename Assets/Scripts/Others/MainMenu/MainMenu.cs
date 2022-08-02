@@ -11,9 +11,12 @@ public class MainMenu : MonoBehaviour
      */
     public Animator MainMenuAnimations;
     public TextMeshProUGUI bestTime;
+    public MainMenuAnimationHandler MAH;
+
     public void Start()
     {
         bestTime.text = PlayerPrefs.GetString("BestTime");
+        StartCoroutine(MAH.PlayOpening());
     }
     public void PlayClick()
     {
