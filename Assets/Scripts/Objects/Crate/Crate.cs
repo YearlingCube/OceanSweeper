@@ -10,6 +10,7 @@ public class Crate : MonoBehaviour
      */
     // Declaring GameManager
     GameManager GM;
+    SoundManager SM;
 
     // Declaring Variables
     public Rigidbody2D rb;
@@ -37,6 +38,7 @@ public class Crate : MonoBehaviour
     {
         Physics2D.IgnoreLayerCollision(6,6);
         GM = FindObjectOfType<GameManager>();
+        SM = FindObjectOfType<SoundManager>();
         SpawnArea = FindObjectOfType<CrateSpawnBoundsVisulizer>().GetComponent<BoxCollider2D>();
         ServeAngle = Random.Range(0, 360);
 
@@ -68,6 +70,7 @@ public class Crate : MonoBehaviour
     private void SetFlag()
     {
         // Changing if its a flag depending on Variable "isFlag"
+        SM.PlaySound("PlaceFlag");
         if (isFlag)
         {
             GM.FlagsClickedCount--;
@@ -87,6 +90,7 @@ public class Crate : MonoBehaviour
     {
         if (!isBomb)
         {
+            SM.PlaySound("OpenCrate");
             this.GetComponent<SpriteRenderer>().sprite = EmptyCrateSprite;
             GM.crateClickedCount++;
             Debug.Log("crateClickedCount + 1 : " + GM.crateClickedCount);
@@ -95,6 +99,7 @@ public class Crate : MonoBehaviour
         }
         else
         {
+            SM.PlaySound("CrateExplosion");
             this.GetComponent<SpriteRenderer>().sprite = BombSprite;
             GM.GameOver();
         }

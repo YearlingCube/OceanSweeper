@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public Animator MainMenuAnimations;
     public TextMeshProUGUI bestTime;
     public MainMenuAnimationHandler MAH;
+    public SoundManager SM;
 
     public void Start()
     {
@@ -47,4 +48,10 @@ public class MainMenu : MonoBehaviour
         // Load Level
         SceneManager.LoadScene(LevelName);
     }
+    #region UI Sound
+    public void OnMouseClick()
+    {
+        SM.PlaySound("Select");
+    }
+    #endregion
 }
