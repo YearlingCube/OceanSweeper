@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
      */
     // GameManager
     public GameManager GM;
+    public SoundManager SM;
 
     // Menus
     public GameObject GameOverMenu;
@@ -79,12 +80,12 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
         GM.timer.PauseTime = false;
         PauseMenu.SetActive(false);
+        isPaused = false;
     }
     public void Pause()
     {
         if (!isPaused)
         {
-            Debug.Log("Pause");
             Time.timeScale = 0;
             GM.timer.PauseTime = true;
             PauseMenu.SetActive(true);
@@ -93,7 +94,6 @@ public class UIManager : MonoBehaviour
         else
         {
             isPaused = false;
-            Debug.Log("Unpause");
             Resume();
         }
     }
@@ -114,6 +114,10 @@ public class UIManager : MonoBehaviour
         PlayerPrefs.SetString("Difficulty", "Hard");
         DiffMenuAnimation.Play("TransUp");
         GM.GameStart();
+    }
+    public void MouseClick()
+    {
+        SM.PlaySound("Select");
     }
     #endregion
 }
