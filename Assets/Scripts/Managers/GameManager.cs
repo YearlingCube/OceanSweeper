@@ -9,9 +9,7 @@ public class GameManager : MonoBehaviour
     /*
         Takes Care Of Everything That Is Not UI
      */
-    // Managers
     public UIManager UI;
-    public SoundManager SM;
 
     public GameObject CrateGameObject;
     public GameObject LightHouseGameObject;
