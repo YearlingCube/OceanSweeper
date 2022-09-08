@@ -12,13 +12,9 @@ public class MainMenu : MonoBehaviour
     public Animator MainMenuAnimations;
     public TextMeshProUGUI bestTime;
     public MainMenuAnimationHandler MAH;
-<<<<<<< HEAD
     public GameObject MainCanvas;
 
     public Canvas CanvSettings;
-=======
-    public SoundManager SM;
->>>>>>> 943b0c6af6c4e277be1b4857220804e07ef5b6f9
 
     public void Start()
     {
@@ -57,19 +53,10 @@ public class MainMenu : MonoBehaviour
         // Load Level
         SceneManager.LoadScene(LevelName);
     }
-<<<<<<< HEAD
     public void BackToMain()
     {
         MainCanvas.SetActive(true);
         //StartCoroutine(MAH.FadeMain());
         CanvSettings.enabled = false;
     }
-=======
-    #region UI Sound
-    public void OnMouseClick()
-    {
-        SM.PlaySound("Select");
-    }
-    #endregion
->>>>>>> 943b0c6af6c4e277be1b4857220804e07ef5b6f9
 }
