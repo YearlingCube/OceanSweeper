@@ -9,7 +9,6 @@ public class MainMenuAnimationHandler : MonoBehaviour
     public Animator Settings;
     public Animator Quit;
     public Animator Credits;
-    public Animator Fade;
 
     public IEnumerator PlayOpening()
     {
@@ -25,15 +24,4 @@ public class MainMenuAnimationHandler : MonoBehaviour
         Credits.Play("CreditsButtonOpening");
         yield return new WaitForSeconds(0.25f);
     }
-    public IEnumerator FadeMain()
-    {
-        Fade.Play("FadeOut");
-        yield return new WaitForSeconds(0.5f);
-        Fade.Play("FadeIn");
-    }
-    public void FadeIn()
-    {
-        Fade.Play("FadeIn");
-    }
 }
-
