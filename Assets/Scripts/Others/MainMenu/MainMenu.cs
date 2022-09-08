@@ -12,6 +12,9 @@ public class MainMenu : MonoBehaviour
     public Animator MainMenuAnimations;
     public TextMeshProUGUI bestTime;
     public MainMenuAnimationHandler MAH;
+    public GameObject MainCanvas;
+
+    public Canvas CanvSettings;
 
     public void Start()
     {
@@ -32,6 +35,9 @@ public class MainMenu : MonoBehaviour
     }
     public void SettingsClick()
     {
+        MAH.FadeIn();
+        MainCanvas.SetActive(false);
+        CanvSettings.enabled = true;
         Debug.Log("Settings Clicked!");
     }
     public void CreditsClick()
@@ -46,5 +52,11 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(1);
         // Load Level
         SceneManager.LoadScene(LevelName);
+    }
+    public void BackToMain()
+    {
+        MainCanvas.SetActive(true);
+        //StartCoroutine(MAH.FadeMain());
+        CanvSettings.enabled = false;
     }
 }

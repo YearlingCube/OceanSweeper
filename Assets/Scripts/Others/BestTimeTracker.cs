@@ -12,16 +12,41 @@ public class BestTimeTracker : MonoBehaviour
     public TextMeshProUGUI TimerText;
 
     float NewAmountTime = 0;
-    float AmountTime = 0;
-    public void SetHighScore(float TenMin, float Min, float TenSec, float Sec)
+    float EasyTime = 0;
+    float MediumTime = 0;
+    float HardTime = 0 ;
+
+    public void SetEasyHighScore(float TenMin, float Min, float TenSec, float Sec)
     {
         NewAmountTime = ((TenMin * 60) * 10) + (Min * 60) + (TenSec * 10) + Sec;
-        if (NewAmountTime > AmountTime)
+        if (NewAmountTime > EasyTime)
         {
             TimerText.text = Mathf.Round(TenMin).ToString() + Mathf.Round(Min).ToString() + " : " + Mathf.Round(TenSec).ToString() + Mathf.Round(Sec).ToString();
-            PlayerPrefs.SetString("BestTime", TimerText.text);
+            PlayerPrefs.SetString("BestEasyTime", TimerText.text);
             PlayerPrefs.Save();
         }
+
     }
-    // TODO : Set Up Different Best Times For Each Difficulty
+    public void SetMediumHighScore(float TenMin, float Min, float TenSec, float Sec)
+    {
+        NewAmountTime = ((TenMin * 60) * 10) + (Min * 60) + (TenSec * 10) + Sec;
+        if (NewAmountTime > MediumTime)
+        {
+            TimerText.text = Mathf.Round(TenMin).ToString() + Mathf.Round(Min).ToString() + " : " + Mathf.Round(TenSec).ToString() + Mathf.Round(Sec).ToString();
+            PlayerPrefs.SetString("BestMediumTime", TimerText.text);
+            PlayerPrefs.Save();
+        }
+
+    }
+    public void SetHardHighScore(float TenMin, float Min, float TenSec, float Sec)
+    {
+        NewAmountTime = ((TenMin * 60) * 10) + (Min * 60) + (TenSec * 10) + Sec;
+        if (NewAmountTime > HardTime)
+        {
+            TimerText.text = Mathf.Round(TenMin).ToString() + Mathf.Round(Min).ToString() + " : " + Mathf.Round(TenSec).ToString() + Mathf.Round(Sec).ToString();
+            PlayerPrefs.SetString("BestHardTime", TimerText.text);
+            PlayerPrefs.Save();
+        }
+
+    }
 }

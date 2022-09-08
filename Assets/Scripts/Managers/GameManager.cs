@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject LightHouseGameObject;
 
     public Timer timer;
-    public BestTimeTracker BestTime;
+    public BestTimeTracker BTT;
 
     public List<Transform> EasySpawnLocations = new List<Transform>();
     public List<Transform> MediumSpawnLocations = new List<Transform>();
@@ -104,7 +104,16 @@ public class GameManager : MonoBehaviour
         GameWon = true;
         Debug.Log("GameWin!");
         timer.StartStopTimer(false);
-        BestTime.SetHighScore(timer.TenMinuteTime, timer.minuteTime, timer.TenSecondTime, timer.secondTime);
+        if (EasyMode)
+        {
+            BTT.SetEasyHighScore(timer.TenMinuteTime, timer.minuteTime, timer.TenSecondTime, timer.secondTime);
+        }else if(MediumMode)
+        {
+            BTT.SetMediumHighScore(timer.TenMinuteTime, timer.minuteTime, timer.TenSecondTime, timer.secondTime);
+        }else if(HardMode)
+        {
+            BTT.SetHardHighScore(timer.TenMinuteTime, timer.minuteTime, timer.TenSecondTime, timer.secondTime);
+        }
         UI.GameWinMenu.SetActive(true);
         UI.GameWinAnimation.Play("TransDown");
     }
